@@ -1,0 +1,32 @@
+{
+  "nodes": {
+    "foremankatellodemo.example.com": {
+      "ip": "192.168.10.10",
+      "ports": [
+        {
+          "host": 8081,
+          "guest": 80
+        },
+        {
+          "host": 8444,
+          "guest": 443
+        },
+        {
+          "host": 5648,
+          "guest": 5647
+        }
+      ],
+      "memory": 8192,
+      "cpus": 2,
+      "box": "geerlingguy/centos7"
+    },
+    "foremanclient6.example.com": {
+      "ip": "192.168.10.20",
+      "ports": [
+      ],
+      "memory": 1024,
+      "cpus": 1,
+      "box": "geerlingguy/centos6"
+   }
+  }
+}
