@@ -1,0 +1,19 @@
+---
+- hosts: foremanclient6.example.com
+  become: true
+
+  #  pre_tasks:
+  # - name: Require that this playbook is running on foremankatellodemo.example.com
+  #   assert:
+  #     that:
+  #       - "ansible_hostname == 'foremanclient6.example.com'"
+  #     msg: >
+  #       This playbook runs on foremanclient6.example.com
+
+  tasks:
+    - name: Install the EPEL repo
+      yum_repository:
+        name: epel
+        state: present
+        description: EPEL YUM repo for CentOS7
+        baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/

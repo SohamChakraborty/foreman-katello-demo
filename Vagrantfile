@@ -33,6 +33,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       if node_name == "foremankatellodemo.example.com"
         config.vm.provision "shell", path: "provisions.sh"
       end
+
+      if node_name == "foremanclient6.example.com"
+        config.vm.provision "ansible" do |ansible|
+          ansible.playbook = "playbook.yaml"
+        end
+      end
+
       # config.vm.provision :shell, :path => node_values[':provisions.sh']
     end
   end
