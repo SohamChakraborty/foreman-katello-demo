@@ -33,7 +33,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       if node_name == "foremankatellodemo.example.com"
         config.vm.provision "shell", path: "provisions.sh"
       end
-      # config.vm.provision :shell, :path => node_values[':provisions.sh']
     end
   end
 end

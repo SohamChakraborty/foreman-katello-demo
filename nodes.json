@@ -27,6 +27,13 @@
       "memory": 1024,
       "cpus": 1,
       "box": "geerlingguy/centos6"
-   }
+   },
+   "foremanclient7.example.com": {
+      "ip": "192.168.10.30",
+      "ports": [],
+      "memory": 1024,
+      "cpus": 1,
+      "box": "geerlingguy/centos7"
+    }
   }
 }
