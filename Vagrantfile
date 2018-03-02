@@ -31,7 +31,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
 
       if node_name == "foremankatellodemo.example.com"
-        config.vm.provision "shell", path: "provisions.sh"
+        config.vm.provision "ansible" do |ansible|
+          ansible.playbook = "katelloserver.yaml"
+        end
       end
 
       if node_name == "foremanclient6.example.com"

@@ -1,5 +1,5 @@
 ---
-- hosts: foremanclient6.example.com
+- hosts: foremankatellodemo.example.com
   become: true
 
   #  pre_tasks:
@@ -22,25 +22,23 @@
       yum:
         name: https://yum.theforeman.org/releases/1.15/el7/x86_64/foreman-release.rpm
         state: present
-        description: Foreman 1.15
 
     - name: Install katello repository
       yum:
         name: https://fedorapeople.org/groups/katello/releases/yum/3.4/katello/el7/x86_64/katello-repos-latest.rpm
         state: present
-        description: katello 3.4
 
     - name: Install puppetlabs repository
       yum:
         name: https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
         state: present
-        description: Puppetlabs current
 
     - name: Install the packages
       yum:
-        name: {{ item }}
+        name: "{{ item }}"
         state: present
-        with_items:
-          - python-django
-          - foreman-release-scl
-          - katello
+      with_items:
+        - python-django
+        - foreman-release-scl
+        - katello
+
